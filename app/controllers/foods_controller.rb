@@ -7,7 +7,7 @@ class FoodsController < ApplicationController
   end
 
   def show
-    render json: @food
+    render json: @food, include: :flavors
   end
 
   def create
@@ -30,6 +30,11 @@ class FoodsController < ApplicationController
   def destroy
     @food.destroy
     render json: "DELETED"
+  end
+
+  # CUSTOM METHOD
+  def add_flavor_to_food
+    
   end
 
   private
