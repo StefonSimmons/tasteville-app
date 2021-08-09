@@ -1,5 +1,5 @@
 class FoodsController < ApplicationController
-  before_action :get_food, only: [:show, :update, :destroy]
+  before_action :get_food, only: [:show, :update, :destroy, :add_flavor_to_food]
 
   def index
     foods = Food.all
@@ -34,13 +34,23 @@ class FoodsController < ApplicationController
 
   # CUSTOM METHOD
   def add_flavor_to_food
-    
+    flavor = Flavor.find_by(name: flavor_params[:name])
+    if !@food.flavors.include? flavor
+      @food.flavors.push(flavor)
+      render json: @food, include: :flavors
+    else
+      render json: @food, include: :flavors
+    end
   end
 
   private
 
   def food_params
     params.require(:food).permit(:name, :user_id)
+  end
+
+  def flavor_params
+    params.require(:flavor).permit(:name)
   end
 
   def get_food

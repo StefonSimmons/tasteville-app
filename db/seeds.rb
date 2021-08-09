@@ -25,8 +25,8 @@ kimchi = Food.create(name: "kimchi", user: flamingo)
 pp "#{Food.count} foods created"
 
 spicy = Flavor.create(name: "spicy")
-sweet = Flavor.create(name: "sweet")
-bitter = Flavor.create(name: "bitter")
+sweet = Flavor.create(name: "sweet
+bitter = Flavor.create(name: "bitt")er")
 sour = Flavor.create(name: "sour")
 salty = Flavor.create(name: "salty")
 umami = Flavor.create(name: "umami")
