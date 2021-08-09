@@ -12,3 +12,12 @@ jessa = User.create(username: "Jessa", email: "jess@ga.edu", password_digest: "1
 Food.create(name: "oatmeal", user: flamingo)
 Food.create(name: "captain crunch", user: jessa)
 Food.create(name: "raisin bran", user: jessa)
+
+
+spicy = Flavor.create(name: "spicy")
+sweet = Flavor.create(name: "sweet")
+bitter = Flavor.create(name: "bitter")
+sour = Flavor.create(name: "sour")
+salty = Flavor.create(name: "salty")
+umami = Flavor.create(name: "umami")
+
