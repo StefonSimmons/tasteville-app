@@ -23,3 +23,8 @@ export const updateFood = async (foodData, foodID) => {
   const res = await api.put(`/foods/${foodID}`, { food: foodData })
   return res.data
 }
+
+export const addFlavorToFood = async (flavorData, foodID) => {
+  const res = await api.put(`/foods/${foodID}/add_flavor`, {flavor: flavorData})
+  return res.data
+}
