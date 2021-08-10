@@ -18,7 +18,7 @@ export default function Flavors() {
       <h1>Flavors</h1>
       {flavors.map(flavor => {
         return (
-          <p>{flavor.name}</p>
+          <p key={flavor.id}>{flavor.name}</p>
         )
       })}
     </div>

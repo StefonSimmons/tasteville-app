@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 import { getOneFood, updateFood } from '../services/foods'
 
-export default function EditFood() {
+export default function EditFood({user}) {
 
   const [formData, setFormData] = useState({
     name: '',
@@ -28,14 +28,14 @@ export default function EditFood() {
     const { value } = e.target
     setFormData({
       name: value,
-      user_id: 3
+      user_id: user?.id
     })
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     const updatedFood = await updateFood(formData, id)
-    history.push('/foods')
+    history.push(`/foods/${updatedFood.id}`)
   }
 
   return (

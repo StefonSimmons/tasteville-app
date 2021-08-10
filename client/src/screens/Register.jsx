@@ -1,11 +1,11 @@
 import React from 'react'
 
-export default function Register({handleSubmit, setFormData, formData}) {
+export default function Register({handleRegister, setRegisterFormData, registerFormData}) {
 
 
   const handleChange = (e) => {
     const { name, value } = e.target
-    setFormData(prevFormData => (
+    setRegisterFormData(prevFormData => (
       {
         ...prevFormData,
         [name]: value
@@ -17,27 +17,27 @@ export default function Register({handleSubmit, setFormData, formData}) {
   return (
     <div>
       <h1>Register</h1>
-      <form onSubmit={(e) => handleSubmit(e)}>
+      <form onSubmit={(e) => handleRegister(e)}>
         <label htmlFor="">username</label>
         <input
           onChange={(e) => handleChange(e)}
           type="text"
           name="username"
-          value={formData.username}
+          value={registerFormData.username}
         />
         <label htmlFor="">email</label>
         <input
           onChange={(e) => handleChange(e)}
           type="text"
           name="email"
-          value={formData.email}
+          value={registerFormData.email}
         />
         <label htmlFor="">password</label>
         <input
           onChange={(e) => handleChange(e)}
           type="password"
           name="password"
-          value={formData.password}
+          value={registerFormData.password}
         />
         <button type="submit">Submit</button>
       </form>

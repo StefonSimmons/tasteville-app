@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 
 export default function Layout(props) {
+
+  const history = useHistory()
 
   const unauthenticated = (
     <div>
@@ -12,7 +14,7 @@ export default function Layout(props) {
   const authenticated = (
     <div>
       <p>{props.user?.username}</p>
-      <button>Logout</button>
+      <button onClick={props.handleLogout}>Logout</button>
     </div>
   )
 

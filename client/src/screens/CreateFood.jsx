@@ -2,7 +2,7 @@ import { useState } from 'react'
 import {useHistory} from 'react-router-dom'
 import { createFood } from '../services/foods'
 
-export default function CreateFood() {
+export default function CreateFood({user}) {
 
   const [formData, setFormData] = useState({
     name: '',
@@ -15,14 +15,14 @@ export default function CreateFood() {
     const {value} = e.target
     setFormData({
       name: value,
-      user_id: 3
+      user_id: user.id
     })
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     const newFood = await createFood(formData)
-    history.push('/foods')
+    history.push(`/foods/${newFood.id}`)
   }
 
 

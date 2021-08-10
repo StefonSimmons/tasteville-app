@@ -6,7 +6,7 @@ import EditFood from "../screens/EditFood"
 import Flavors from "../screens/Flavors"
 import FoodDetail from "../screens/FoodDetail"
 
-export default function Main() {
+export default function Main({user}) {
   return (
     <div>
       <Route exact path="/">
@@ -19,10 +19,10 @@ export default function Main() {
         <FoodDetail/>
       </Route>
       <Route exact path="/create-food">
-        <CreateFood/>
+        <CreateFood user={user}/>
       </Route>
       <Route exact path="/foods/:id/edit">
-        <EditFood/>
+        <EditFood user={user}/>
       </Route>
       <Route exact path="/flavors">
         <Flavors/>

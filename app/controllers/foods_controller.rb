@@ -1,5 +1,6 @@
 class FoodsController < ApplicationController
   before_action :get_food, only: [:show, :update, :destroy, :add_flavor_to_food]
+  before_action :authorize_request, only: [:create, :update, :destroy]
 
   def index
     foods = Food.all
