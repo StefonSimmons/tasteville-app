@@ -27,13 +27,13 @@ export default function Foods() {
       {foods.map(food => {
         return (
           <section key={food.id}>
-            <p>{food.name}</p>
+            <Link to={`/foods/${food.id}`}><p>{food.name}</p></Link>
             <Link to={`/foods/${food.id}/edit`}><button>edit</button></Link>
             <button onClick={() => handleDelete(food.id)}>delete</button>
           </section>
         )
       })}
-      <Link to="/foods/create"><button>Add Food</button></Link>
+      <Link to="/create-food"><button>Add Food</button></Link>
     </div>
   )
 }
