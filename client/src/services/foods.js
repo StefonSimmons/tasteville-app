@@ -18,3 +18,8 @@ export const createFood = async (foodData) => {
   const res = await api.post("/foods", { food: foodData })
   return res.data
 }
+
+export const updateFood = async (foodData, foodID) => {
+  const res = await api.put(`/foods/${foodID}`, { food: foodData })
+  return res.data
+}
