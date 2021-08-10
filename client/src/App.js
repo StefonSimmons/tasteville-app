@@ -1,19 +1,12 @@
 import './App.css';
-import {Route} from "react-router-dom"
 import Layout from './layout/Layout';
-import Home from './screens/Home'
-import Foods from './screens/Foods'
+import Main from "./components/Main"
 
 function App() {
   return (
     <div>
       <Layout>
-        <Route exact path="/">
-          <Home/>
-        </Route>
-        <Route exact path="/foods">
-          <Foods/>
-        </Route>
+        <Main/>
       </Layout>
     </div>
   );

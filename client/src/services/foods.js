@@ -14,3 +14,7 @@ export const deleteFood = async (foodID) => {
   await api.delete(`/foods/${foodID}`)
 }
 
+export const createFood = async (foodData) => {
+  const res = await api.post("/foods", { food: foodData })
+  return res.data
+}

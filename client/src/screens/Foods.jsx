@@ -26,8 +26,8 @@ export default function Foods() {
       <h1>Foods</h1>
       {foods.map(food => {
         return (
-          <section>
-            <p key={food.id}>{food.name}</p>
+          <section key={food.id}>
+            <p>{food.name}</p>
             <Link to={`/foods/${food.id}/edit`}><button>edit</button></Link>
             <button onClick={() => handleDelete(food.id)}>delete</button>
           </section>
