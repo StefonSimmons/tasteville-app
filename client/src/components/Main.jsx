@@ -3,6 +3,7 @@ import Home from '../screens/Home'
 import Foods from '../screens/Foods'
 import CreateFood from '../screens/CreateFood'
 import EditFood from "../screens/EditFood"
+import Flavors from "../screens/Flavors"
 
 export default function Main() {
   return (
@@ -18,6 +19,9 @@ export default function Main() {
       </Route>
       <Route exact path="/foods/:id/edit">
         <EditFood/>
+      </Route>
+      <Route exact path="/flavors">
+        <Flavors/>
       </Route>
     </div>
   )
