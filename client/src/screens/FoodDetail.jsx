@@ -18,7 +18,7 @@ export default function FoodDetail() {
       setFood(food)
     }
     fetchFood()
-  }, [])
+  }, [id])
 
   useEffect(() => {
     const fetchFlavors = async () => {

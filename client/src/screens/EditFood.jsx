@@ -22,7 +22,7 @@ export default function EditFood({user}) {
       })
     }
     fetchFood()
-  }, [])
+  }, [id])
 
   const handleChange = (e) => {
     const { value } = e.target
