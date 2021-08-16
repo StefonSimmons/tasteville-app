@@ -14,13 +14,13 @@ export default function Flavors() {
   }, [])
 
   return (
-    <div>
+    <section className="screen-section">
       <h1>Flavors</h1>
       {flavors.map(flavor => {
         return (
           <p key={flavor.id}>{flavor.name}</p>
         )
       })}
-    </div>
+    </section>
   )
 }

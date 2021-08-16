@@ -1,0 +1,21 @@
+.food-list{
+  display: grid;
+  grid-template: repeat(4, 1fr);
+  gap: 20px;
+  width: 400px;
+  margin-bottom: 15px;
+}
+
+.food-list-name{
+  grid-column: 2;
+}
+
+.food-list-edit{
+  grid-column: 3;
+  width: 75px
+
+}
+.food-list-delete{
+  grid-column: 4;
+  width: 75px
+}

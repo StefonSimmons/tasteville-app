@@ -1,4 +1,5 @@
 import { Link, useHistory } from "react-router-dom"
+import "./styles/layout.css"
 
 export default function Layout(props) {
 
@@ -14,13 +15,16 @@ export default function Layout(props) {
   const authenticated = (
     <div>
       <p>{props.user?.username}</p>
-      <button onClick={props.handleLogout}>Logout</button>
+      <button onClick={() => {
+        props.handleLogout()
+        history.push("/")
+      }}>Logout</button>
     </div>
   )
 
   return (
     <div>
-      <header>
+      <header className="layout-header">
         <h1>TasteVille</h1>
         {
           props.user ?
@@ -30,7 +34,7 @@ export default function Layout(props) {
         }
       </header>
       <hr />
-      <div>
+      <div className="nav-links">
         <Link to="/foods">Foods</Link>
         <Link to="/flavors">Flavors</Link>
       </div>

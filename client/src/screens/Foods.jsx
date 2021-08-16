@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { Link } from "react-router-dom"
 import { getAllFoods, deleteFood } from '../services/foods'
-
-export default function Foods() {
+import "./styles/foods.css"
+export default function Foods({user}) {
 
   const [foods, setFoods] = useState([])
 
@@ -22,18 +22,20 @@ export default function Foods() {
   }
 
   return (
-    <div>
+    <section className="screen-section">
       <h1>Foods</h1>
-      {foods.map(food => {
-        return (
-          <section key={food.id}>
-            <Link to={`/foods/${food.id}`}><p>{food.name}</p></Link>
-            <Link to={`/foods/${food.id}/edit`}><button>edit</button></Link>
-            <button onClick={() => handleDelete(food.id)}>delete</button>
-          </section>
-        )
-      })}
+      <div className="food-list">
+        {foods.map(food => {
+          return (
+            <Fragment key={food.id}>
+              <Link to={`/foods/${food.id}`} className="food-list-name"><p>{food.name}</p></Link>
+              <Link to={`/foods/${food.id}/edit`}><button className="food-list-edit">edit</button></Link>
+              <button disabled={!user} onClick={() => handleDelete(food.id)} className="food-list-delete">delete</button>
+            </Fragment>
+          )
+        })}
+      </div>
       <Link to="/create-food"><button>Add Food</button></Link>
-    </div>
+    </section>
   )
 }

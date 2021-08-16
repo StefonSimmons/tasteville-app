@@ -13,7 +13,7 @@ export default function Main({user}) {
         <Home />
       </Route>
       <Route exact path="/foods">
-        <Foods />
+        <Foods user={user} />
       </Route>
       <Route exact path="/foods/:id">
         <FoodDetail/>

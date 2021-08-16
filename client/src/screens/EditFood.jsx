@@ -48,8 +48,9 @@ export default function EditFood({user}) {
           id="name"
           type="text"
           value={formData.name}
+          disabled={!user}
         />
-        <button type="submit">Submit</button>
+        <button disabled={!user} type="submit">Submit</button>
       </form>
     </div>
   )

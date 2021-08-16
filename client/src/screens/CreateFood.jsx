@@ -36,8 +36,11 @@ export default function CreateFood({user}) {
           id="name"
           type="text"
           value={formData.name}
+          disabled={!user}
+          placeholder={!user && "must log in to add"}
         />
-        <button type="submit">Submit</button>
+        
+        <button disabled={!user} type="submit">Submit</button>
       </form>
     </div>
   )

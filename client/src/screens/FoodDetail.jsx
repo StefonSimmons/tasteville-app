@@ -41,14 +41,14 @@ export default function FoodDetail() {
 
 
   return (
-    <div>
+    <section className="screen-section">
       <h1>{food.name}</h1>
       {food.flavors?.map(flavor => {
         return (
           <p key={flavor.id}>{flavor.name}</p>
         )
       })}
-      <form onSubmit={(e) => handleSubmit(e)}>
+      <form onSubmit={(e) => handleSubmit(e)} className="food-detail-form">
         <select onChange={(e) => handleChange(e)} defaultValue="default">
           <option disabled value="default">Select Flavor</option>
           {flavors.map(flavor => {
@@ -59,6 +59,6 @@ export default function FoodDetail() {
         </select>
         <button type="submit">Submit</button>
       </form>
-    </div>
+    </section>
   )
 }
